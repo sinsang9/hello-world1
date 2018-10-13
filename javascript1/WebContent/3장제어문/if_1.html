@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title> if문 </title>
+
+<!--  예제 : 방문자에게 입력받은 걸음수를 조건문으로 만들고,
+					걸음수가 10,000보 이상일 경우에만 출력문 실행 하기 
+ -->
+<script type="text/javascript">
+//<![CDATA[
+    //방문자의 하루 걸음수를 입력받습니다.
+    var walkAmount=prompt("당신의 하루 걷는 양은 몇 보인가요?","0");
+	
+    if(walkAmount>=10000){  //10,000보 이상일 경우에만 출력문을 실행합니다.
+    document.write("매우 좋은 습관을 지니고 계시는군요!!");
+    }
+    
+    //결론 : 
+   	// 화면에 입력한 값이 10,000보 이상일 경우에는 조건식 true를 반환하여 출력문을 실행하지만,
+   	// 10,000보 미만일 경우에는 출력문을 실행 하지 않습니다.
+   	
+//]]>
+</script>
+</head>
+<body>
+
+</body>
+</html>

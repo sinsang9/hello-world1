@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>이벤트</title>
+
+<!-- 전송 버튼을 클릭 했을때  this를 이용해 이벤트가 발생한  <form>요소를 함수 매개변수에 전달 하고,
+	 이  <form>에 방문자가 입력한 값이 정규 표현 객체의 규칙(패턴)에 맞게 되었으면
+	 action속성에 지정한 페이지로 값들을 전송 하는 예제 입니다.
+ -->
+<style type="text/css">
+body {
+	font: 12px gulim, "굴림", sans-serif;
+}
+
+fieldset {
+	border: none 0;
+}
+
+legend {
+	position: absolute;
+	left: -9999px;
+}
+</style>
+<script type="text/javascript">
+	//<![CDATA[
+		
+	//submit_chk(myForm)함수의 역할
+	//-> 방문자가 입력한 이름과 연락처가 !!  정해진 패턴에 맞게 작성되었는지 검사 합니다.
+	//   틀릴 경우에는 경고 창을 띄우고 포커스를 이동 시킵니다.
+	
+	function submit_chk(myForm) {
+		//시작부터 끝까지 한글2~5글자 까지 일치하는 패턴으로 정규표현 객체를 생성 하였음
+		var reg1 = /^[가-힣]{2,5}$/;
+		
+		//첫글자는 010,016,011중 하나로 시작하고,
+		//다음은 숫자3~4개까지오고, 마지막으로 숫자4개가 일치하는 패턴으로 정규표현객체를 생성 하였음.
+		var reg2 = /^(010|016|011)\d{3,4}\d{4}$/;
+
+		/*이름 입력하는 <input name="user_name">을 
+		변수 name에 참조시켰습니다.*/
+		var name = myForm.user_name;
+
+		/*연락처 입력하는 <input name="user_tel">을 
+		변수 tel에 참조시켰습니다.*/
+		var tel = myForm.user_tel;
+
+		/*방문자가 입력한 이름이 정규표현 규칙에 어긋나면
+		   false를 반환합니다.*/
+		var result1 = reg1.test(name.value);
+
+		/*방문자가 입력한 전화번호가 정규표현 규칙에 어긋나면
+		   false를 반환합니다.*/
+		var result2 = reg2.test(tel.value);
+
+		//이름을 정해진 규칙에 어긋나게 작성 했을 경우 경고 창을 띄우고 이름 입력하는 곳으로 포커스를 이동 시킴
+		if (!result1) {
+			alert("이름 입력이 잘못되었습니다.");
+			name.value = "";
+			name.focus();
+			return false;
+		//연락처를 정해진 규칙에 어긋나에 작성 했을 경우 경고 창을 띄우고 연락 처를 입력 하는 곳으로 포커스를 이동 시킴
+		} else if (!result2) {
+			alert("연락처 입력이 잘못되었습니다.");
+			tel.value = "";
+			tel.focus();
+			return false;
+		}
+	}
+
+	/*취소 버튼을 눌렀을 땐 확인/취소 창을 띄우고, 다시 한번
+	회원가입 취소 여부를 묻습니다.*/
+	
+	//[가입취소] 버튼을 눌렀을 경우 함수 내의 실행문이 실행 됩니다.
+	//"정말로 회원가입을 취소하시겠습니까?"라는 확인/취소 창을 띄우고 
+	// 만일 [취소] 버튼을 누를경우  false를 반환하여 가입취소가 실행되지 않습니다.
+	function reset_chk(myForm) {
+		var result = confirm("정말로 회원가입을 취소하시겠습니까?");
+		if (result) {
+			return false;
+		}
+	}
+	//]]>
+</script>
+</head>
+<!-- <body>에 하위 요소를 모두 로딩한 후 이름 입력하는 
+곳으로 포커스 이동시킵니다. -->
+<body onload="document.f1.user_name.focus();">
+	
+	<!-- 
+		onsubmit="return submit_chk(this);" 는 회원가입(전송)버튼을 눌렀을때 함수 submit_chk()를 호출 합니다.
+		여기서 this는 전송 이벤트가 발생한 <form>을 가리킵니다.
+		return은 함수에서 false를 반환 받으면 action속성에 작성된 페이지로 데이터 전송을 취소 시킵니다.
+	 -->
+	 <!-- 
+	 onreset="return reset_chk(this);" 는 취소 버튼을 눌렀을때 함수 reset_chk()를 호출 합니다.
+	 여기서 this는 취소 이벤트가 발생한 <form>태그를 가리킵니다.
+	 역시 return문은 함수에서 false를 반환 받으면 reset기능이 취소 됩니다.
+	  -->
+	<form action="#" method="post" name="f1"
+		onsubmit="return submit_chk(this);" 
+		onreset="return reset_chk(this);">
+		
+		
+		<fieldset>
+			<legend>회원가입</legend>
+			<p>
+				<label for="user_name">이름</label> 
+				<input type="text" name="user_name" id="user_name" />
+			</p>
+			<p>
+				<label for="user_tel">연락처</label> 
+				<input type="text" name="user_tel" id="user_tel" />
+			</p>
+			<p>
+				<input type="submit" value="회원가입" /> 
+				<input type="reset" value="가입취소" />
+			</p>
+		</fieldset>
+	</form>
+</body>
+</html>
+
+<!-- 
+	결론 : 예제를 실행 해보면, 방문자가 이름과 연락처를 입력하고 [회원가입] 버튼을 눌렀을때 
+	정규 표현 규칙에 맞게 이름 또는 연락처를 작성 했는지 검사합니다.
+	그리고 [가입취소]버튼을 누르면 확인/취소 창을 띄워 "정말로 회원가입을 취소 하시겠습니까?"라고 묻습니다
+ -->
+

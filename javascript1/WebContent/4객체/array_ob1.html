@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title> 배열객체 </title>
+<script type="text/javascript">
+//<![CDATA[
+	//배열 객체 생성
+  var d=[30, "홍길동", true];
+  document.write(d[0],"<br />");
+  document.write(d[1],"<br />");
+  document.write(d[2],"<br />");
+   
+  //배열로 저장된 값들의 인덱스번호가 0부터 2까지 있으므로,
+  //for문을 이용합니다. 인덱스 개수 만큼 반복문을 실행 시켜. 배열의 데이터를 출력
+  for(var i=0; i<3; i++){  //for문을 적용함. 3은 배열 객체에 저장된 데이터 개수.
+      document.write(d[i],"<br />");
+  }
+     
+  /*배열의 length(저장된 데터의 개수) 속성을
+  이용해 반복문의 조건식에 적용함.*/
+  for(var i=0; i<d.length; i++){
+      document.write(d[i],"<br />"); //인덱스 0, 1, 2위체에 저장된 값들을 출력 함.
+  }
+     
+ //배열 객체d의 데이터 저장된 유효 인덱스만큼  반복 실행 됨.
+ //d에 저장된 총 데이터 개수는 3개 이므로 인덱스는0부터 2까지 존재 함.
+ //그러므러 i값은 0부터 2까지 1씩 증가되면서 {...}의 코드가 실행 됨.
+  for(i in d){
+      document.write(d[i],"<br />");
+  }
+//]]>
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

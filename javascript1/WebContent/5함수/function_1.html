@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title> 함수 </title>
+
+<!-- 
+예제주제 : 함수 정의문과 익명함수를 변수에 참조 시키는 두가지 방식으로 함수를 선언 한것을  호출 하여 실행문을 실행한 예제 
+ -->
+
+<script type="text/javascript">
+//<![CDATA[
+var i=0;
+function myFnc(){ // myFnc함수 정의문
+   i++;
+   document.write("hello"+i,"<br />");
+}
+  
+myFnc(); //myFnc 함수 호출
+  
+  
+var theFnc=function(){ //익명 함수를 변수 theFnc에 참조 시킴.
+   i++;
+   document.write("bye"+i,"<br />");
+}
+  
+theFnc(); //변수 theFnc에 참조된 함수를 호출
+//]]>
+</script>
+</head>
+<body>
+
+<!-- 결과 : 예제를 실행 하면, 함수 호출로 먼저 myFnc()의 함수에 실행문이 실행되어 .. -->
+<!-- "hello1"이 출력되고,  이어서 theFnc의 함수에 실행문이 실행되어 "bye2"가 출력 됨. -->
+
+
+
+</body>
+</html>

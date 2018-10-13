@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>이벤트</title>
+
+<!-- 
+
+ -->
+ 
+ <!-- 
+ 예제 : 버튼에 두가지 방식으로 click이벤트와 mouseover 이벤트를 동륵시켜 배경색이 바뀌도록 한 예제 
+  -->
+<script type="text/javascript">
+	//<![CDATA[
+	//배경색에 쓰일 데이터 배열 생성
+	var color = [ "white", "yellow", "aqua", "purple" ];
+	
+	var i = 0;
+	function colorBg() {
+		//1증가
+		i++;
+		//만약 i변수 값이 컬러배열의 길이보다 크거나 같으면 
+		if (i >= color.length){
+			//i변수를 0으로 초기화
+			i = 0;			
+		}
+		//body태그를 선택하여
+		var bodyTag = document.getElementsByTagName("body")[0];
+		//body태그의 배경색을 color배열의 i번째 인덱스 위치의 값으로 셋팅 
+		bodyTag.style.backgroundColor = color[i];
+	}
+
+	
+	window.onload = function() {
+		//②, ④은 DOM을 이용해 이벤트를 등록하였습니다.
+
+		//② [버튼2]를 클릭할 때 마다 colorBg함수를 호출합니다. 
+		//함수를 호출 하므로 색상이 바뀝니다.
+		var btn2 = document.getElementById("btn2");
+		btn2.onclick = function() {
+			colorBg();//함수호출
+		}
+
+		//④ [버튼4]에 마우스를 올릴 때 마다 colorBg함수를 호출합니다.
+		var btn4 = document.getElementById("btn4");
+		btn4.onmouseover = function() {
+			colorBg();//함수호출
+		}
+	}
+	//]]>
+</script>
+</head>
+<body>
+	<p>
+		<!--① [버튼1]을 클릭할 때 마다 colorBg함수를 호출합니다. -->
+		<button onclick="colorBg();">버튼1</button>
+	</p>
+	<p>
+		<button id="btn2">버튼2</button>
+	</p>
+	<p>
+		<!--③ [버튼3]을 클릭할 때 마다 colorBg함수를 호출합니다. -->
+		<button onmouseover="colorBg();">버튼3</button>
+	</p>
+	<p>
+		<button id="btn4">버튼4</button>
+	</p>
+</body>
+</html>

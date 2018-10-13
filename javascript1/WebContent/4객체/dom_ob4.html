@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title> DOM 객체 </title>
+</head>
+<body>
+<div id="wrap">
+   <p>내용1</p>
+   <p>내용2</p>
+   <p>내용3</p>
+   <p>내용4</p>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+	//id갑이 "wrap"인 <div>를 선택하고 이요소를 기준으로
+	//첫번쨰 자식 <p>내용1</p>  를 선택 하여 글자에 빨간색 스타일(CSS)을 적용 하였음
+  document.getElementById("wrap").children[0].style.color="red";
+	
+  //반복문의 조건식에 노드 타입 값을 검사하여 요소(Element) 노드가 아닐 경우에는
+  //계속해서 다음요소가 선택 되도록 반복문을 이용함.
+  //정상적으로nextObj에 요소노드가 참조되면 노드타입이 1이 되므로 반복문이 종료 되고 
+  //배경색이 노란색으로 적용 됨.
+  var p=document.getElementsByTagName("p")[1];
+  var nextObj=p.nextSibling;
+  while(nextObj.nodeType !=1){
+    nextObj=nextObj.nextSibling;
+  }
+ nextObj.style.backgroundColor="yellow";
+//]]>
+</script>
+</body>
+</html>

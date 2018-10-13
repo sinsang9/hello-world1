@@ -1,0 +1,80 @@
+1<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title> 문자 객체 </title>
+<script type="text/javascript">
+//<![CDATA[
+ /*변수 t에 문자형 데이터를 저장했는 것은 다시 말하면 
+ 변수 t에 문자 객체를 참조시킨거나 같다.*/
+ var t="Hello Thank you good luck to you";  // <---------문자String객체 생성
+ //		 012345...................................................  <--인덱스 위치
+ 
+ //인덱스 16에 저장된 문자를 불러 옵니다.  -> "g"
+ document.write(t.charAt(16),"<br />");
+ 
+ //문자열 왼쪽에서부터 최초로 발견된 "you"의 인덱스 값을 반환 합니다 -> 12
+ document.write(t.indexOf("you"),"<br />");
+ 
+ //t에 참조된 문자 객체에  인덱스 16부터 오른쪽 방향으로 "you"라는 문자를 찾습니다. 
+ //이때 최초에 발견된 번지수(인덱스 번호) 29를 반환 함.
+ document.write(t.indexOf("you",16),"<br />");
+ 
+ //t에 참조된 문자열 오른쪽 마지막에서부터 "you"라는 문자를 찾습니다.
+ //이때 최초에 발견된 번지수(인덱스번호) 29를 반환 합니다.
+ document.write(t.lastIndexOf("you"),"<br />");
+ 
+ //t에 참조된 문자열 인덱스 위치 25번부터 왼쪽 방향으로  "you"라는 문자를 찾습니다.
+ //이때 최초에 발견된 번지수(인덱스번호) 12를 반환 합니다.
+ document.write(t.lastIndexOf("you",25),"<br />");
+ 
+ //t에 참조된 문자 객체에 "luck"이라는 문자를 포함하고 있으면 "luck"이라는 문자 데이터를 반환 하고,
+ //하지만 포함 하고 있지 않을때에는 null값을 반환 합니다.
+ document.write(t.match("luck"),"<br />");
+ 
+ //t에 참조된 문자 객체의 왼쪽부터 "you"라는 문자를 찾습니다.
+ //이때 최초 발결된 번지수(인덱스번호) 12를 반환 합니다.
+ document.write(t.search("you"),"<br />");
+ 
+ //t에 참조된 문자열에 인덱스위치 21 부터  4글자를 가지고 오므로 "luck"를 반환함.
+ document.write(t.substr(21,4),"<br />");
+ //t에 참조된 문자 객체에 인덱스 6부터 12이전까지의 문자열을 잘라서 가져오므로 "Thank"를 반환함.
+ //만약 t.substring(6)이라고 작성 하면 문자열전체에서 인덱스6부터 이후의 모든 문자열을 잘라 옵니다.
+ document.write(t.substring(6,12),"<br />");
+ 
+ //t에 참조된 문자열의 왼쪽부터 "you"라는 문자를 찾아 최초에 발견된 "you"만  "me"라고 치환되어
+ //Hello Thank me good luck to you 를 반환함
+ document.write(t.replace("you","me"),"<br />");
+ 
+ //문자열에서 영문 대문자를 모두 소문자로 바꿔서 반환함
+ document.write(t.toLowerCase(),"<br />");
+ //문자열에서 영문 소문자를  모두 대문자로 바꿔서 반환함
+ document.write(t.toUpperCase(),"<br />");
+ //문자열에서 문자의 개수를 반환함.
+ document.write(t.length,"<br />");
+
+ //t에 참조된 문자열에  공백("")을 기준으로  
+ //문자를 "Hello", "Thank", "you", "good", "luck","to","you" 7개의 문자로 나눕니다.
+ //이렇게 나뉜 여러개의 문장 데이터는 배열로 저장되어 번지수(인덱스번호)가 부여 되고,
+ //s라는 변수가 배열객체를 참조 하게 됨
+ var s=t.split(" ");
+ //배열s의 인덱스 0위치에 저장된 문자열을 출력 합니다 -> "Hello"
+ document.write(s[0],"<br />");
+//배열s의 인덱스 4위치에 저장된 문자열을 출력 합니다 -> "luck"
+ document.write(s[4],"<br />");
+ 
+ 
+ var str = "A";
+ //변수에 저장된 문자열 중 0번 인덱스의 문자"A"의 아스키 코드값을 반환 합니다.
+ var t = str.charCodeAt(0);
+//대문자 "A"의 아스키 코드값 65를 출력
+ document.write(t,"<br />");
+
+ //코드값 65에 해당하는 문자를 반환함
+ document.write(String.fromCharCode(65),"<br />");
+//]]>
+</script>
+</head>
+<body>
+</body>
+</html>

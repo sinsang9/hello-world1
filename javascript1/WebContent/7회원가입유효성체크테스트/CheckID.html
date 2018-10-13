@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Insert title here</title>
+
+
+<script type="text/javascript">
+	
+	function CheckID() {
+		var uID = document.getElementById("uID");
+		if (uID.value.length<3||uID.value.length>8) {
+			alert("아이디는 3자 이상 8자 이내 입니다.");
+			uID.value = "";
+			return false;
+		} else {
+			if (window.confirm("아이디를 사용하시겠습니까?")) {
+				opener.document.getElementById("uID").value = uID.value;
+				window.close();
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	아이디
+	<input type="text" name="uID" id="uID"></input>
+	<input type="button" onclick="CheckID();" value="확인"></input>
+</body>
+</html>

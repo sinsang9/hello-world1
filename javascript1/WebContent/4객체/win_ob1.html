@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title> window 객체 </title>
+<script type="text/javascript">
+//<![CDATA[
+	
+//window객체의 open()메소드는 새창을 띄울때 사용 한다.
+//새창에 열릴 페이지 주소는 --> "winpopup.html"
+//창이름->"pop1"
+//새창의 너비 -> 300px
+//새창의 높이 -> 400px
+//스크린 기준으로 왼쪽에서 300px만큼 떨어지고 위쪽에서 10px만큼 떨어져서 열리도록 설정 함.
+//scrollbars=no -> 창의 스크롤 막대 노출 여부를 결정 함( 숨김=no,  노출=yes)
+//location=no -> 창의 url주소 입력 영역 노출 여부를 결정 함. (숨김=no, 노출=yes)
+window.open("winpopup.html","pop1",
+						"width=300,height=400,left=300,top=10,scrollbars=no,toolbars=no,location=no");
+						
+						//인터넷 익스플로러로 실행 !!
+//]]>
+</script>
+</head>
+<body>
+<h1>이지스 퍼블리싱</h1>
+</body>
+</html>

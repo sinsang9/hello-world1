@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title> 숫자 객체 </title>
+<script type="text/javascript">
+//<![CDATA[
+var num1=3.456789;
+var num2=700000;
+var num3="30.5px";
+var num4=40;
+//num2.toExponential(1) 은 num2변수에 저장된값  700000을 지정한 고정소수점 자리만큼 지수표기법으로 
+//값을 반환 합니다. 소수점 첫째 자리까지 표기되고 7.0 X  100000이므로 
+//지수표기법은 7.0e+5로 표기됨
+document.write(num2.toExponential(1), "<br />");
+
+//num1변수에 저장된값 3.456789를 지정한 고정 소수점 자리만큼만 반올림하여 표기 합니다
+//소수점 둘째 자리까지 반올림되어 다음과 같이 표기 됩니다.
+// 3.456789에서 소수점 세째자리에서 반올림하여  3.46이 됨
+document.write(num1.toFixed(2), "<br />");
+
+//num1에 저장된 값 3.456789에 유효한 숫자 2개(3.4)에 반올림 하면 3.5를 문자형 형태로 반환함
+document.write(num1. toPrecision(2), "<br />");
+
+//num1변수에 저장된 값 3.456789를 문자형 데이터로 반환 함.
+document.write(num1.toString(), "<br />");
+
+//num4변수에 저장된 값을 반환 합니다.
+document.write(num4.valueOf(), "<br />");
+
+//num3변수에 저장된 "30.5px"를 parseInt()를 사용하여 정수만 남겨 30을 반환하고,
+//num4변수의 값 40과 더합니다.
+//최종적으로 70이라는 결과를 반환 합니다.
+document.write(parseInt(num3)+num4, "<br />");
+
+//pareseFloat(num3)는 num3변수에 저장된 "30.5px"를  실수만 남겨 30.5를 반환하고,
+//num4변수의 값40과 더합니다.
+//최종적으로 70.5를 반환 합니다.
+document.write(parseFloat(num3)+num4, "<br />");
+//]]>
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

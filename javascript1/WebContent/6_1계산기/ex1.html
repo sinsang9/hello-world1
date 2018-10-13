@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		td {
+			text-align: center;
+		}
+		input {
+			width: 100%;
+		}
+	</style>
+	
+	<script type="text/javascript">
+	
+		var prev = 'NULL';
+		var oper = 'NULL';
+		
+		function renew(item){
+			//id속성이 data인 태그요소(<input>)를 선택해서 가져와서 data변수에 저장
+			var data = document.getElementById('data');
+			
+			//renew함수의 매개변수로 넘어온 파라미터값이  'clear'일경우!!
+			//즉! clear버튼을 클릭했을경우 ~ 
+			if(item == 'clear') {
+				//id속성의 값이 data인 input태그의 값을 빈공백문자로 표시.
+				data.value = '';
+			}else if(item =='='){ // = 버튼을 클릭 했을경우 
+							//예) eval('1+2'); 처럼... 작성 되어 있다면...
+							//자바스크립트 eval()함수는 eval안에 문자형 수식을 계산하거나 
+							//문자형 숫자를 숫자형 숫자로 바꿔주는 함수이다.
+							
+				//id속성의 값이 data인 input태그에 누적된 수식을 계산한 결과를 반환 하여...
+				//id속성의 값이 data인 input태그에 결과값 나타내기 
+				data.value = eval(data.value);
+			}else{// 'clear' 버튼 또는 '='버튼 이외에 다른 버튼 수식 버튼 등을 클릭 했을경우
+				  // id속성의 값이 data인 input태그의 값을 계속 누적 시킨다.
+				data.value += item;
+			}
+		}
+	</script>
+<title></title>
+</head>
+<body>
+		<table border="1">
+			<tr>
+				<td colspan="4">
+					<input type="text" id="data" name="data2" readonly>
+				</td>
+			</tr>
+			<tr>
+				<td><input type="button" value="1" onclick="renew(1);"></td>
+				<td><input type="button" value="2" onclick="renew(2);"></td>
+				<td><input type="button" value="3" onclick="renew(3);"></td>
+				<td><input type="button" value="+" onclick="renew('+');"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="4" onclick="renew(4);"></td>
+				<td><input type="button" value="5" onclick="renew(5);"></td>
+				<td><input type="button" value="6" onclick="renew(6);"></td>
+				<td><input type="button" value="-" onclick="renew('-');"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="7" onclick="renew(7);"></td>
+				<td><input type="button" value="8" onclick="renew(8);"></td>
+				<td><input type="button" value="9" onclick="renew(9);"></td>
+				<td><input type="button" value="*" onclick="renew('*');"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="button" value="0" onclick="renew(0);"></td>
+				<td><input type="button" value="." onclick="renew('.');"></td>
+				<td><input type="button" value="/" onclick="renew('/');"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="button" value="=" onclick="renew('=');"></td>
+				<td colspan="2"><input type="button" value="clear" onclick="renew('clear');"></td>
+			</tr>
+		</table>
+</body>
+</html>

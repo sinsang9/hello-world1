@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>내장객체</title>
+<!-- 
+	주제 :  new키워드와 기본 객체 생성 함수 Object()를 이용해 객체 생성 해보기
+ -->
+<script type="text/javascript">
+//<![CDATA[
+
+	//new 키워드와 객체 생성 함수를 이용해 새로운 객체를 생성한 후, 변수 tv에 참조 시켰습니다.
+	var tv = new Object(); //생성된 객체를 변수 tv가 참조
+
+	//생성된 tv 객체 width,height,weiㅇght, color속성값을 입력 함.
+	tv.width = "30cm";
+	tv.height = "25cm";
+	tv.weight = "20kg";
+	tv.color = "white";
+
+	//생성된 tv 객체에  off 기능(메서드)을 생성함.
+	tv.off = function() {
+		document.write("전원 off", "<br />");
+	}
+
+	document.write(tv.width, "<br />"); //tv에 너비 속성을 출력합니다.
+	document.write(tv.height, "<br />"); //tv에 높이 속성을 출력합니다.
+	document.write(tv.weight, "<br />"); //tv에 무게 속성을 출력합니다.
+	document.write(tv.color, "<br />"); //tv에 컬러 속성을 출력합니다.
+
+	tv.off(); //tv에 off 기능을 실행합니다.
+	//]]>
+</script>
+</head>
+<body>
+
+</body>
+</html>

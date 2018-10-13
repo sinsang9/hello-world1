@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title> DOM 객체 </title>
+</head>
+<body>
+<h1 id="title">마우스 아웃</h1>
+<a href="#" id="btn"><img src="images/btn_out.gif" alt="버튼" /></a>
+<p id="img_src"></p>
+<script type="text/javascript">
+//<![CDATA[
+	//id값이 "btn"인 <a>태그를 선택.
+   var theBtn=document.getElementById("btn");
+	
+	//id값이 "img_src"인 <p>태그를 선택.
+   var s=document.getElementById("img_src");
+   
+	//id값이 "btn"인 <a>태그에 마우스를 올릴때마다 익명함수 (function(){....}) 의 코드들이 실행 됩니다.
+   theBtn.onmouseover=function(){
+   		//id값이 "title"인 <h1>태그에 텍스트가 " 마우스 오버"로 바뀌고 , 
+		document.getElementById("title").innerHTML="마우스 오버";
+   		
+      	//<img>태그에  src값을  "images/btn_over.gif"로 변경되어  마우스 오버된 이미지로 바뀝니다.
+      	theBtn.firstChild.src="images/btn_over.gif";
+      	
+      	//마우스 오버된 <img>태그의 src값을 <p id="img_src>태그에 텍스트로 출력합니다."
+      	s.innerHTML=theBtn.firstChild.src;
+   }
+
+	//<a id="btn">태그에서 마우스가 벗어날때 마다 익명함수 function(){...}의 코드들이 실행 됩니다.
+   theBtn.onmouseout=function(){
+	 //id값이 "title"인 <h1>태그에 텍스트가 " 마우스 아웃"으로 바뀌고 , 
+      document.getElementById("title").innerHTML="마우스 아웃";
+	 
+    //<img>태그에  src값을  "images/btn_out.gif"로 변경되어  마우스 아웃된 이미지로 바뀝니다.
+      theBtn.firstChild.src="images/btn_out.gif";
+    
+    //마우스 아웃된 <img>태그의 src값을 <p id="img_src>태그에 텍스트로 출력합니다."
+      s.innerHTML=theBtn.firstChild.src;
+   }
+//]]>
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title> 증감 연산자 </title>
+<script type="text/javascript">
+//<![CDATA[
+   var num1=10;        //변수 num1에 10을 저장합니다.
+   var num2=20;        //변수 num2에 20을 저장합니다.
+   var result;           //변수 result를 선언하였습니다.
+ 
+   num1--;                  //변수 num1에 데이터가 1 감소 했으므로 num1에는 현재 9가 저장됩니다.
+   //변수 num1에 변화된 데이터를 출력합니다.
+   document.write(num1,"<br />");
+    
+   num1++;                  //변수 num1에 데이터가 1이 증가 했으므로 num1에는 현재 10이 저장됩니다.
+   //변수 num1에 변화된 데이터를 출력합니다.
+   document.write(num1,"<br />");    
+    
+   //++가 변수의 뒤에 있을때는 먼저 변수 result에 num2의 값을 저장한 후에 num2의 값을 증가 하게 됩니다.
+    //대입 연산자가 먼저 실행되고, 증가 연산자가 실행됩니다.
+    result=num2++;  
+    //변수 result에 저장된 값 20이 출력됩니다.
+   document.write(result,"<br />"); 
+   
+    //++가 변수의 앞에 있을 때는 먼저 num2의 값을 증가 시킨 후에 , 변수 result에 num2의 값을 저장 합니다.
+   //증가 연산자가 먼저 발생되고, 대입 연산자가 실행됩니다.
+   result=++num2;  
+   //변수 result에 저장된 값 22가 출력됩니다.
+   document.write(result,"<br />"); 
+//]]>
+</script>
+</head>
+<body>
+
+</body>
+</html>

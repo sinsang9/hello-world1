@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"
+ />
+<title>회원가입</title>
+<script type="text/javascript">
+</script>
+<!-- 자바스크립트 블러오기 -->
+<script language="javascript" type="text/javascript" src="CheckForm.js"></script>
+</head>
+<body>
+
+<form action="Register.jsp" name="MemberForm" id="MemberForm" method="post"onsubmit="return CheckForm();">
+	<table border="1" align="center">
+		<tr>
+		<td colspan="2">회원가입</td>		
+		</tr>
+		<tr>
+		<td>*이름</td>
+		<td><input type="text" name="uName" id="uName"></input></td>
+		</tr>
+		<tr>
+		<td>*ID</td>
+		<td><input type="text" name="uID" id="uID" readonly="readonly"></input>
+		<input type="button" name="checkID" onclick="CheckID();" value="유효성 확인"></input></td>
+		</tr>
+		<tr>
+		<td>*비밀번호</td> 
+		<td><input type="password" name="uPWD" id="uPWD"></input></td>
+		</tr>
+		<tr>
+		<td>*비밀번호 확인</td>
+		<td><input type="password" name="uPWD_Confirm" id="uPWD_Confirm"></input></td>
+		</tr>
+		<tr>
+		<td>*주민번호</td>
+		<td><input type="number" name="uBirth" id="uBirth" ></input>-
+		<input type="password" name="uBirth_2" id="uBirth_2"></input>		
+		</td>		
+		</tr>		
+		<tr>
+		<td>*직업</td>
+		<td>	
+		<select name="work" id="work">
+			<option selected>직업명</option>
+			<option value="기타">기타</option>
+			<option value="회사원">회사원</option>
+			<option value="학생">학생</option>
+		</select></td>
+		</tr>
+		<tr>
+		<td>*성별</td>
+		<td>남<input type="radio" name="sex" id="s1" value="male"></input>
+		여<input type="radio" name="sex" id="s2"  value="female"></input>
+		</td>
+		</tr>
+		<tr>
+		<td>*취미</td>
+		<td><input type="checkbox" name="hobby" id="h1" value="독서">독서</input>
+		<input type="checkbox" name="hobby" id="h2" value="등산">등산</input>
+		<input type="checkbox" name="hobby" id="h3"value="낚시">낚시</input></td>
+		</tr>
+		<tr>
+		<td>*가입동기</td>
+		<td><textarea rows="20" cols="100" name="motivation"></textarea></td>
+		</tr>
+		<tr>
+		<td colspan="2" align="center"><input type="submit" value="가입"></input>
+		<input type="reset" value="취소"></input></td>
+		
+		</tr>
+	</table>
+</form>
+</body>
+</html>

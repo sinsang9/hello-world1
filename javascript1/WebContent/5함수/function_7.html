@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title> 함수 </title>
+
+<!--  
+예제 주제 : 함수 정의문 내에 실행문을 실행 한후, 계산된 결괏값을 return으로  함수 호출문에 되돌려 주는 예제
+ -->
+<script type="text/javascript">
+//<![CDATA[
+	
+function myFnc(a, b){ //함수 정의문
+    var num=a*b;
+    return num; //함수 호출 문에 30을 반환 합니다.
+}
+
+var result=myFnc(10,3);  //함수 호출문
+
+document.write(result);
+//]]>
+</script>
+</head>
+<body>
+</body>
+</html>

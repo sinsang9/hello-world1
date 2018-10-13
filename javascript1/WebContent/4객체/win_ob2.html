@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>window 객체</title>
+<script type="text/javascript">
+	//<![CDATA[
+	//변수 pop가 팝업 창을 참조합니다.
+	var pop = window.open("winpopup.html",
+		"pop1",
+		"width=300,height=400,left=300,top=10,scrollbars=no,toolbars=no,location=no");
+
+		//open(   팝업으로 열 사이트 또는 페이지의 경로,  
+		// 			 팝업을 띄울 창이름, 
+		// 			 옵션설정 : 팝업창의 크기 , 높이, 위치, 도구사자 노출 여부 등을 설정
+		// 			 )											
+
+		//]]>
+</script>
+</head>
+<body>
+	<!--  
+
+	[브라우저 창 위치 변경] 버튼을 클릭 했을때..
+	자바스크립트의 코드가 실행되어 변수pop가 참조하고 있는 팝업창의 위치를 모니터를 기준으로 
+	왼쪽에서 200px만큼 이동 하고 , 위쪽에서 300px만큼 이동 시킵니다.
+	또한 팝업창에 focus()메서드를 적용해 가장 앞으로 띄우도록 함.
+ -->
+	<p>
+		<button onclick="pop.moveTo(200,300); pop.focus();">브라우저 창 위치 변경</button>
+	</p>
+
+	<!-- 
+		[브라우저 창 크기 변경] 버튼을 클릭 했을때..
+		팝업창의 너비가 200px, 높이가 300px로 바뀝니다.
+		또한 팝업창에 focus()메서드를 적용해 가장 앞으로 띄우도록 함.
+ -->
+	<p>
+		<button onclick="pop.resizeTo(200,300); pop.focus();">브라우저 창 크기 변경</button>
+	</p>
+</body>
+</html>
